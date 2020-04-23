@@ -47,8 +47,11 @@ public class TestController3 {
         int triedAllInCount = 0;
         int roundCount = 0;
         while (reminedChips > 1) {
-            System.out.print(reminedChips + ", ");
-            if (canJohnTryToAllIn(K, reminedChips, triedAllInCount)) {
+            if(triedAllInCount == K){
+                return roundCount + reminedChips -1 ;
+            }
+
+            if (canJohnTryToAllIn(reminedChips)) {
                 reminedChips = reminedChips / 2;
                 triedAllInCount++;
             } else {
@@ -63,8 +66,8 @@ public class TestController3 {
         return roundCount;
     }
 
-    private boolean canJohnTryToAllIn(int K, int reminedChips, int triedAllInCount) {
-        return reminedChips % 2 == 0 && triedAllInCount < K;
+    private boolean canJohnTryToAllIn(int reminedChips) {
+        return reminedChips % 2 == 0;
     }
 
     public static void main(String[] args) {
