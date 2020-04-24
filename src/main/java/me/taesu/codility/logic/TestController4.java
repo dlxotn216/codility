@@ -44,7 +44,7 @@ public class TestController4 {
             System.out.print(A[i] + ", ");
             groups.add(A[i]);
 
-            boolean canSplit = canSplit(A, i, maximumOfLeft) && groups.size() > 1;
+            boolean canSplit = canSplit(A, i, maximumOfLeft);
 
             if (canSplit) {
                 groupCount++;
@@ -97,6 +97,8 @@ public class TestController4 {
         System.out.println(new TestController4().solution(new int[]{1, 2, 3}));
         System.out.println();
         System.out.println(new TestController4().solution(new int[]{1, 2, 3, 4, 5, 6}));
+        System.out.println();
+        System.out.println(new TestController4().solution(new int[]{1, 0, 2, 3, 4}));
         System.out.println();
     }
 }
